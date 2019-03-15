@@ -64,7 +64,7 @@ module Contentful
             wordpress_url: url(xml_post),
             slug: slug(xml_post),
             content: content(xml_post),
-            created_at: created_at(xml_post),
+            publishDate: created_at(xml_post),
             category: category(xml_post)
           }
         end

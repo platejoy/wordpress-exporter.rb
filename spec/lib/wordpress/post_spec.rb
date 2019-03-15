@@ -30,11 +30,11 @@ module Contentful
             expect(post[:title]).to eq 'Informacje'
             expect(post[:wordpress_url]).to eq 'http://szpryc.wordpress.com/informacje/hello/world/'
             expect(post[:slug]).to eq 'informacje/hello/world'
-            expect(post[:created_at]).to eq Date.parse('2014-11-26')
+            expect(post[:publishDate]).to eq Date.parse('2014-11-26')
             expect(post[:category]).to eq 'Hello World Category'
           end
 
-          it 'extracts :created_at as Date.today when wp:post_date and wp:post_date_gmt are missing' do
+          it 'extracts :publishDate as Date.today when wp:post_date and wp:post_date_gmt are missing' do
             xml_doc = Nokogiri::XML(File.open('spec/fixtures/wordpress_empty_dates.xml'))
             post_xml = xml_doc.xpath('//item').to_a.first
 
@@ -42,15 +42,15 @@ module Contentful
 
             post = Post.new(xml_doc, @settings).send(:extract_data, post_xml)
 
-            expect(post[:created_at]).to eq Date.today
+            expect(post[:publishDate]).to eq Date.today
           end
 
-          it 'tries to fetch :created_at from wp:post_date_gmt if wp:post_date is missing' do
+          it 'tries to fetch :publishDate from wp:post_date_gmt if wp:post_date is missing' do
             xml_doc = Nokogiri::XML(File.open('spec/fixtures/wordpress_empty_dates.xml'))
             post_xml = xml_doc.xpath('//item').to_a[1]
             post = Post.new(xml_doc, @settings).send(:extract_data, post_xml)
 
-            expect(post[:created_at]).to eq Date.parse('2015-06-20')
+            expect(post[:publishDate]).to eq Date.parse('2015-06-20')
           end
         end
 
