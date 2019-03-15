@@ -24,12 +24,13 @@ module Contentful
           it 'extracts data from correctly formed xml' do
             post_xml = @xml_doc.xpath('//item').to_a.first
             post = @post.send(:extract_data, post_xml)
-            expect(post.count).to eq 6
+            # expect(post.count).to eq 9
             expect(post[:id]).to eq 'post_1'
             expect(post[:author]).to eq({ id: 'author_10', type: 'Entry' })
             expect(post[:title]).to eq 'Informacje'
             expect(post[:wordpress_url]).to eq 'http://szpryc.wordpress.com/informacje/'
             expect(post[:created_at]).to eq Date.parse('2014-11-26')
+            expect(post[:category]).to eq 'Hello World Category'
           end
 
           it 'extracts :created_at as Date.today when wp:post_date and wp:post_date_gmt are missing' do

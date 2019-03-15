@@ -4,8 +4,36 @@
   "wordpress_url": "http://szpryc.wordpress.com/informacje/",
   "content": "This is an example of a page. Unlike posts, which are displayed on your blog’s front page in the order they’re published, pages are better suited for more timeless content that you want to be easily accessible, like your About or Contact information. Click the Edit link to make changes to this page or <a title=\"Direct link to Add New in the Admin Dashboard\" href=\"/wp-admin/post-new.php?post_type=page\">add another page</a>.",
   "created_at": "2014-11-26",
+  "category": "Hello World Category",
   "author": {
     "id": "author_10",
     "type": "Entry"
-  }
+  },
+  "tags": [
+    {
+      "id": [
+        "<wp:tag>\n      <wp:term_id>2656354</wp:term_id>\n      <wp:tag_slug>testowy</wp:tag_slug>\n      <wp:tag_name><![CDATA[testowy]]></wp:tag_name>\n    </wp:tag>",
+        "<wp:tag>\n      <wp:term_id>306830130</wp:term_id>\n      <wp:tag_slug>testowy2</wp:tag_slug>\n      <wp:tag_name><![CDATA[testowy2]]></wp:tag_name>\n    </wp:tag>"
+      ],
+      "type": "Entry"
+    },
+    {
+      "id": [
+        "<wp:tag>\n      <wp:term_id>2656354</wp:term_id>\n      <wp:tag_slug>testowy</wp:tag_slug>\n      <wp:tag_name><![CDATA[testowy]]></wp:tag_name>\n    </wp:tag>",
+        "<wp:tag>\n      <wp:term_id>306830130</wp:term_id>\n      <wp:tag_slug>testowy2</wp:tag_slug>\n      <wp:tag_name><![CDATA[testowy2]]></wp:tag_name>\n    </wp:tag>"
+      ],
+      "type": "Entry"
+    }
+  ],
+  "categories": [
+    {
+      "id": [
+        "<wp:category>\n      <wp:term_id>14786</wp:term_id>\n      <wp:category_nicename>bez-kategorii</wp:category_nicename>\n      <wp:category_parent/>\n      <wp:cat_name><![CDATA[Bez kategorii]]></wp:cat_name>\n    </wp:category>",
+        "<wp:category>\n      <wp:term_id>2214351</wp:term_id>\n      <wp:category_nicename>chatka</wp:category_nicename>\n      <wp:category_parent/>\n      <wp:cat_name><![CDATA[chatka]]></wp:cat_name>\n    </wp:category>",
+        "<wp:category>\n      <wp:term_id>8076</wp:term_id>\n      <wp:category_nicename>dom</wp:category_nicename>\n      <wp:category_parent/>\n      <wp:cat_name><![CDATA[dom]]></wp:cat_name>\n    </wp:category>",
+        "<wp:category>\n      <wp:term_id>11599757</wp:term_id>\n      <wp:category_nicename>puchatka</wp:category_nicename>\n      <wp:category_parent/>\n      <wp:cat_name><![CDATA[puchatka]]></wp:cat_name>\n    </wp:category>"
+      ],
+      "type": "Entry"
+    }
+  ]
 }

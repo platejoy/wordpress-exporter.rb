@@ -63,7 +63,8 @@ module Contentful
             title: title(xml_post),
             wordpress_url: url(xml_post),
             content: content(xml_post),
-            created_at: created_at(xml_post)
+            created_at: created_at(xml_post),
+            category: category(xml_post)
           }
         end
 
@@ -96,6 +97,10 @@ module Contentful
           end
           output_logger.warn "Post <#{post_id(xml_post)}> didn't have Creation Date - defaulting to #{Date.today}"
           Date.today
+        end
+
+        def category(xml_post)
+          xml_post.search('category[domain="category"]').text.try(:sub, '<![CDATA[', '').try(:sub, ']]', '')
         end
       end
     end
