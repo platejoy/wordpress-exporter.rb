@@ -28,7 +28,8 @@ module Contentful
             expect(post[:id]).to eq 'post_1'
             expect(post[:author]).to eq({ id: 'author_10', type: 'Entry' })
             expect(post[:title]).to eq 'Informacje'
-            expect(post[:wordpress_url]).to eq 'http://szpryc.wordpress.com/informacje/'
+            expect(post[:wordpress_url]).to eq 'http://szpryc.wordpress.com/informacje/hello/world/'
+            expect(post[:slug]).to eq 'informacje/hello/world'
             expect(post[:created_at]).to eq Date.parse('2014-11-26')
             expect(post[:category]).to eq 'Hello World Category'
           end

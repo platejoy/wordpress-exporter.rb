@@ -62,6 +62,7 @@ module Contentful
             id: post_id(xml_post),
             title: title(xml_post),
             wordpress_url: url(xml_post),
+            slug: slug(xml_post),
             content: content(xml_post),
             created_at: created_at(xml_post),
             category: category(xml_post)
@@ -84,6 +85,10 @@ module Contentful
 
         def url(xml_post)
           xml_post.xpath('link').text
+        end
+
+        def slug(xml_post)
+          url(xml_post).sub(/https?:\/\/[^\/]+\/(.*)$/, '\1').chomp('/')
         end
 
         def content(xml_post)
